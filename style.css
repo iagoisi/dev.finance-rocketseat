@@ -114,14 +114,45 @@ header {
 
 #logo {
     color: #FFF;
-    padding: 2rem o 10rem;
+    padding: 3rem 2rem;
     font-weight: 100;
+}
+#sub-menu {
+    display: flex;
+    align-items: center;
+    margin-top: -11em;
+    margin-bottom: 2em;
+    max-width: 800px;
+    /* background: red; */
+}
+
+#sub-menu .eye {
+    display: none;
+    margin-left: 3em;
+    padding: 0.4em;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    
+}
+
+#sub-menu .eye.active {
+    display: flex;
+}
+
+#sub-menu .eye-off {
+    display: none;
+    /* cursor: pointer; */
+    margin-left: 3em;
+    padding: 0.4em;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    
+}
+#sub-menu .eye-off.active {
+    display: flex;
 }
 
 /* Balance ================== */
-#balance {
-    margin-top: -8rem;
-}
 
 #balance h2 {
     color: white;
@@ -156,6 +187,7 @@ header {
 .card.total {
     color: white;
 }
+
 
 /* Tabela ================== */
 
@@ -214,8 +246,17 @@ td.income {
     color: #12A454;
 }
 
+
+td.income.inactive {
+    opacity: 0;
+}
+
 td.expense {
     color: var(--red);
+}
+
+td.expense.inactive {
+    opacity: 0;
 }
 /* Modal ================== */
 .modal-overlay {

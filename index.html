@@ -13,10 +13,16 @@
 
 <body>
     <header>
-        <img src="./assets/logo.svg" alt="Logo Dev Finance">
+        <img id="logo" src="./assets/logo.svg" alt="Logo Dev Finance">
     </header>
 
+    
+
     <main class="container">
+        <section id="sub-menu">
+            <a class="eye" onclick="Animations.showValues()" href="#"><img src="./assets/eye.svg" alt="Esconder números"></a>
+            <a class="eye-off active" onclick="Animations.hideValues()" href="#"><img src="./assets/eye-off.svg" alt="Esconder números"></a>
+        </section>
         <section id="balance">
             <h2 class="sr-only">Balanço</h2>
 
@@ -25,7 +31,7 @@
                     <spam>Entradas</spam>
                     <img src="./assets/income.svg" alt="Imagem de Entradas">
                 </h3>
-                <p id="income-display">R$ 0,00</p>
+                    <p id="income-display">R$ 0,00</p>
             </div>  
 
             <div class="card">

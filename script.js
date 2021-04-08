@@ -226,6 +226,56 @@ const Animations = {
         } else {
             cardTotal.style.background = "#49AA26"
     }
+    },
+
+    hideValues() {
+        document.querySelector("#income-display").innerHTML = "$"
+        document.querySelector("#expense-display").innerHTML = "$"
+        document.querySelector("#total-display").innerHTML = "$"
+
+        document.querySelector("#sub-menu .eye").classList.add("active");
+        document.querySelector("#sub-menu .eye-off").classList.remove("active");
+
+
+        const incomeList = document.querySelectorAll(".income")
+        const expenseList = document.querySelectorAll(".expense")
+
+        const arrayExpenseList = Array.from(expenseList)
+        arrayExpenseList.forEach(item => {
+            item.classList.add("inactive")
+        })
+
+        const arrayIncomeList = Array.from(incomeList);
+
+        arrayIncomeList.forEach(item => {
+            item.classList.add("inactive")
+        })
+
+        console.log(arrayIncomeList)
+    },
+
+    showValues() {
+        DOM.updateBalance();
+        document.querySelector("#sub-menu .eye-off").classList.add("active");
+        document.querySelector("#sub-menu .eye").classList.remove("active");
+
+        const incomeList = document.querySelectorAll(".income")
+        const expenseList = document.querySelectorAll(".expense")
+
+        const arrayExpenseList = Array.from(expenseList)
+        arrayExpenseList.forEach(item => {
+            item.classList.remove("inactive")
+        })
+
+        const arrayIncomeList = Array.from(incomeList);
+
+        arrayIncomeList.forEach(item => {
+            item.classList.remove("inactive")
+        })
+
+        
+
+
     }
 }
 
@@ -237,6 +287,8 @@ const App = {
         
         DOM.updateBalance();
         Animations.negativeAccount();
+        // Animations.hideValues();
+
         Storage.set(Transaction.all)
     },
     reload() {
