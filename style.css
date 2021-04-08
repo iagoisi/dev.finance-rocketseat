@@ -154,7 +154,6 @@ header {
 }
 
 .card.total {
-    background: var(--green);
     color: white;
 }
 

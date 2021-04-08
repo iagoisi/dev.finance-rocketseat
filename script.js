@@ -69,6 +69,8 @@ const Transaction = {
     },
 
     
+
+    
 }
 
 const DOM = {
@@ -210,6 +212,23 @@ const Form = {
     }
 }
 
+
+const Animations = {
+    negativeAccount() {
+        // seleciona o card total
+        const cardTotal = document.getElementById('card-total')
+
+        // console.log(Transaction.total())
+
+        if( Transaction.total() < 0 ) {
+            cardTotal.style.background = "#E92929"
+            // cardTotal.style.opacity = 0.5;
+        } else {
+            cardTotal.style.background = "#49AA26"
+    }
+    }
+}
+
 const App = {
     init() {
         Transaction.all.forEach((transaction, index) => {
@@ -217,13 +236,16 @@ const App = {
         }) 
         
         DOM.updateBalance();
-
+        Animations.negativeAccount();
         Storage.set(Transaction.all)
     },
     reload() {
         DOM.clearTransactions();
+        Animations.negativeAccount();
         App.init();
+
     },
 }
+
 
 App.init()
