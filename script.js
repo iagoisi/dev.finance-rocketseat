@@ -233,8 +233,8 @@ const Animations = {
         document.querySelector("#expense-display").innerHTML = "$"
         document.querySelector("#total-display").innerHTML = "$"
 
-        document.querySelector("#sub-menu .eye").classList.add("active");
-        document.querySelector("#sub-menu .eye-off").classList.remove("active");
+        document.querySelector("#sub-menu .eye").classList.remove("active");
+        document.querySelector("#sub-menu .eye-off").classList.add("active");
 
 
         const incomeList = document.querySelectorAll(".income")
@@ -250,14 +250,12 @@ const Animations = {
         arrayIncomeList.forEach(item => {
             item.classList.add("inactive")
         })
-
-        console.log(arrayIncomeList)
     },
 
     showValues() {
         DOM.updateBalance();
-        document.querySelector("#sub-menu .eye-off").classList.add("active");
-        document.querySelector("#sub-menu .eye").classList.remove("active");
+        document.querySelector("#sub-menu .eye-off").classList.remove("active");
+        document.querySelector("#sub-menu .eye").classList.add("active");
 
         const incomeList = document.querySelectorAll(".income")
         const expenseList = document.querySelectorAll(".expense")
